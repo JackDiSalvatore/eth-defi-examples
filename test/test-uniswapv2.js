@@ -36,5 +36,6 @@ contract("TestUniswapV2", (accounts) => {
         console.log(`out ${await tokenOut.balanceOf(TO)}`);
         // WETH has 8 decimal places, so the result would be
         /// balanceOf() / 10 ** 8
+        console.log(`out ${new BN(await tokenOut.balanceOf(TO)).div(new BN(10).pow(new BN(8)))} WBTC`);
     })
 });
