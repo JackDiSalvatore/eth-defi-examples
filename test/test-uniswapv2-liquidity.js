@@ -28,10 +28,6 @@ contract("TestUniswapV2Liquidity", (accounts) => {
         await sendEther(web3, accounts[0], TOKEN_A_WHALE, 1);
         await sendEther(web3, accounts[0], TOKEN_B_WHALE, 1);
 
-        // console.log("WETH_WHALE (1): ", process.env.WETH_WHALE);
-        // console.log("WETH_WHALE: ", WETH_WHALE);
-        // console.log("TOKEN_A_WHALE: ", TOKEN_A_WHALE);
-
         await tokenA.transfer(CALLER, TOKEN_A_AMOUNT, { from: TOKEN_A_WHALE });
         await tokenB.transfer(CALLER, TOKEN_B_AMOUNT, { from: TOKEN_B_WHALE });
 

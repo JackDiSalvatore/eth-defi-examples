@@ -1,0 +1,26 @@
+{
+  "name": "eth-defi-examples",
+  "version": "1.0.0",
+  "description": "from: https://www.youtube.com/playlist?list=PLO5VPQH6OWdX-Rh7RonjZhOd9pb9zOnHW",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JackDiSalvatore/eth-defi-examples.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JackDiSalvatore/eth-defi-examples/issues"
+  },
+  "homepage": "https://github.com/JackDiSalvatore/eth-defi-examples#readme",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.4.2",
+    "bn.js": "^5.2.0"
+  }
+}

@@ -28,4 +28,5 @@ In another terminal
 # truffle test --network mainnet_fork test/test-uniswapv2.js
 
 env $(cat .env) npx truffle test --network mainnet_fork test/test-uniswapv2-liquidity.js
+env $(cat .env) npx truffle test --network mainnet_fork test/test-uniswapv2-optimal.js
 ```
