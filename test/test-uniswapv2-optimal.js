@@ -7,7 +7,7 @@ const TestUniswapV2Optimal = artifacts.require("TestUniswapV2Optimal");
 
 contract("TestUniswapV2Optimal", (accounts) => {
     const WHALE = DAI_WHALE;
-    const AMOUNT = pow(10, 18).mul(new BN(1000));
+    const AMOUNT = pow(10, 18).mul(new BN(1000));   // 1,000 DAI
 
     let contract;
     let fromToken;
@@ -33,7 +33,7 @@ contract("TestUniswapV2Optimal", (accounts) => {
         }
     }
 
-    it("optimal swap", async () => {
+    it("optimal swap: DAI -> WETH", async () => {
         // const before = await snapshot()
         await contract.optimalSwap(
             fromToken.address,

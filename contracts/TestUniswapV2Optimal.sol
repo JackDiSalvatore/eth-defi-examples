@@ -38,12 +38,37 @@ contract TestUniswapV2Optimal {
         return (sqrt(r.mul(r.mul(3988009) + a.mul(3988000))).sub(r.mul(1997))) / 1994;
     }
 
-  function getPair(address _tokenA, address _tokenB) external view returns (address) {
-    return IUniswapV2Factory(FACTORY).getPair(_tokenA, _tokenB);
-  }
+    function getPair(address _tokenA, address _tokenB) external view returns (address) {
+        return IUniswapV2Factory(FACTORY).getPair(_tokenA, _tokenB);
+    }
 
     function optimalSwap(address _tokenA, address _tokenB, uint _amountA) external {
-        // TODO... https://github.com/t4sk/defi-by-example/blob/main/contracts/TestUniswapOptimal.sol
         // https://www.youtube.com/watch?v=1ivHqueaTVo&list=PLO5VPQH6OWdX-Rh7RonjZhOd9pb9zOnHW&index=5
+        require(_tokenA == WETH || _tokenB == WETH, "!WETH");
+
+        IERC20(_tokenA).transferFrom(msg.sender, address(this), _amountA);
+
+        address pair = IUniswapV2Factory(FACTORY).getPair(_tokenA, _tokenB);
+        (uint reserve0, uint reserve1, ) = IUniswapV2Pair(pair).getReserves();
+
+        // uint swapAmount;
+        // if(IUniswapV2Pair(pair).token0() == _tokenA) {
+        //     // swap from token0 to token1
+        //     swapAmount = getSwapAmount(reserve0, _amountA);
+        // } else {
+        //     // swap from token1 to token0
+        //     swapAmount = getSwapAmount(reserve1, _amountA);
+        // }
+
+        // _swap(_tokenA, _tokenB, swapAmount);
+        // _addLiquidity(_tokenA, _tokenB);
+    }
+
+    function _swap(address _from, address _to, uint _amount) internal {
+
+    }
+
+    function _addLiquidity(address _tokenA, address tokenB) internal {
+
     }
 }

@@ -7,7 +7,7 @@ from: https://www.youtube.com/playlist?list=PLO5VPQH6OWdX-Rh7RonjZhOd9pb9zOnHW
 ```sh
 WE3_INFURA_PROJECT_ID=d0ec29a0058f463ca96ee64c20d1a256
 DAI_WHALE=0x2fEb1512183545f48f6b9C5b4EbfCaF49CfCa6F3
-WETH_WHALE=0xEab23c1E3776fAd145e2E3dc56bcf739f6e0a393
+WETH_WHALE=0xe5F8086DAc91E039b1400febF0aB33ba3487F29A
 ```
 
 ### Test
@@ -25,8 +25,11 @@ ganache-cli \
 In another terminal
 
 ```bash
+truffle compile
+
 # truffle test --network mainnet_fork test/test-uniswapv2.js
 
-env $(cat .env) npx truffle test --network mainnet_fork test/test-uniswapv2-liquidity.js
-env $(cat .env) npx truffle test --network mainnet_fork test/test-uniswapv2-optimal.js
+env $(cat .env) npx truffle test --compile-none --network mainnet_fork test/test-uniswapv2-liquidity.js
+
+env $(cat .env) npx truffle test --compile-none --network mainnet_fork test/test-uniswapv2-optimal.js
 ```
